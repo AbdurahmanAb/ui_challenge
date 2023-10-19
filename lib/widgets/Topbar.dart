@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class TopBar extends StatelessWidget {
-  const TopBar({super.key});
+  final String text;
+  final IconData? icon;
+  final String? asset;
+
+  const TopBar({this.text = '', this.icon, this.asset, super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,14 +25,16 @@ class TopBar extends StatelessWidget {
             ),
           ),
           Text(
-            "Search For Products",
+            text,
             style: TextStyle(fontSize: 15),
           ),
-          Image.asset(
-            "assets/pictures/user_avatar.png",
-            width: 40,
-            fit: BoxFit.cover,
-          )
+          asset != null
+              ? Image.asset(
+                  asset!,
+                  width: 40,
+                  fit: BoxFit.cover,
+                )
+              : Icon(icon),
         ],
       ),
     );

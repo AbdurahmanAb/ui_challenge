@@ -16,6 +16,7 @@ class TextWidget extends StatelessWidget {
     return Text(text,
         textAlign: TextAlign.center,
         style: GoogleFonts.lato(
-            textStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: size)));
+            textStyle: TextStyle(
+                fontWeight: FontWeight.bold, color: color, fontSize: size)));
   }
 }

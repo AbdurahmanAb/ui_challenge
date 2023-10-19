@@ -35,10 +35,8 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void nextPage() {
     _currentPage == 2
-        ? Timer(Duration(microseconds: 500), () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (contex) => HomeScreen()));
-          })
+        ? Navigator.push(
+            context, MaterialPageRoute(builder: (contex) => HomeScreen()))
         : _controller.nextPage(
             duration: Duration(
                 milliseconds: 700), // Set the duration of the animation
